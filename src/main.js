@@ -10,13 +10,17 @@ function Main() {
 
     useEffect(() => socket.on('database', results => setData(results)), [])
 
-    const handleClick = () => {
+    const handleRefresh = () => {
         socket.emit('refresh', results => setData(results))
+    }
+
+    const handleReload = (event, server) => {
+        socket.emit('reload', server)
     }
 
     return (
         <div>
-            <Table data={data} handleClick={handleClick} />
+            <Table data={data} handleRefresh={handleRefresh} handleReload={handleReload} />
         </div>
     )
 }
