@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { io } from 'socket.io-client'
+import axios from 'axios'
 import { Table } from './ui'
-
-const socket = io()
 
 function Main() {
 
     const [data, setData] = useState()
 
-    useEffect(() => socket.on('database', results => setData(results)), [])
+    useEffect(() => {
+        axios.get('http://localhost:4005/bmc')
+            .then(response => setData(response.data))
+    }, [])
 
     const handleRefresh = () => {
-        socket.emit('refresh')
+        axios.post('http://localhost:4005/bmc')
+            .then(response => setData(response.data))
     }
 
     return (

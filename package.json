@@ -1,7 +1,6 @@
 {
   "name": "frontend",
   "private": true,
-  "proxy": "http://localhost:4000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build"
@@ -27,13 +26,13 @@
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
     "history": "^5.0.0",
     "material-table": "^1.69.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.0.0-beta.0",
     "react-scripts": "4.0.3",
-    "socket.io-client": "^4.0.1",
     "typeface-roboto": "^1.1.13",
     "web-vitals": "^1.1.1"
   }
